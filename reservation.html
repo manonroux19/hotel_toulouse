@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Réservation et paiement - Hôtel de Toulouse Besançon</title>
+    <meta name="description" content="Préparez votre réservation à l'Hôtel de Toulouse à Besançon : choisissez vos dates, votre chambre ou salle et transmettez votre demande en quelques clics." />
+    <meta name="theme-color" content="#1d2c3d" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand" aria-label="Accueil Hôtel de Toulouse">
+          <span class="brand-mark" aria-hidden="true">T</span>
+          <span class="brand-text">
+            <strong>Hôtel de Toulouse</strong>
+            <span>Besançon</span>
+          </span>
+        </a>
+        <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-navigation">
+          <span aria-hidden="true"></span>
+          <span class="sr-only">Menu</span>
+        </button>
+        <nav class="nav" id="site-navigation" aria-label="Navigation principale">
+          <a href="index.html">Accueil</a>
+          <a href="chambres.html">Chambres</a>
+          <a href="seminaire.html">Séminaires</a>
+          <a href="reception-mariage.html">Réception &amp; Mariage</a>
+          <a href="tourisme.html">Tourisme</a>
+          <a href="acces.html">Accès</a>
+          <a href="galerie-photos.html">Galerie Photos</a>
+          <a href="contact.html">Contact</a>
+          <a href="reservation.html">Réservation</a>
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="reservation.html" class="cta-button">Réserver !</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container hero-inner">
+          <div class="breadcrumbs" aria-label="Fil d'Ariane">
+            <a href="index.html">Accueil</a>
+            <span>›</span>
+            <span>Réservation</span>
+          </div>
+          <div class="hero-copy">
+            <span class="eyebrow">Votre séjour à Besançon</span>
+            <h1>Page de réservation et paiement</h1>
+            <p class="lead">Indiquez vos dates et choisissez une chambre ou une salle. Envoyez votre demande à l'équipe de l'hôtel pour confirmer les disponibilités et le tarif.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container booking-layout">
+          <form class="form-grid booking-form" id="booking-form">
+            <h2>Préparer ma demande</h2>
+            <div class="field-row">
+              <label for="arrival">Date d'arrivée
+                <input type="date" id="arrival" name="arrival" required />
+              </label>
+              <label for="departure">Date de départ
+                <input type="date" id="departure" name="departure" required />
+              </label>
+            </div>
+            <label for="booking-type">Type de réservation
+              <select id="booking-type" name="booking-type">
+                <option value="room">Chambre</option>
+                <option value="meeting">Salle de séminaire</option>
+              </select>
+            </label>
+            <div class="booking-choice" data-booking-choice="room">
+              <label for="room-category">Catégorie de chambre
+                <select id="room-category" name="room-category">
+                  <option>Classique</option>
+                  <option>Confort</option>
+                  <option>Supérieure</option>
+                  <option>Deluxe</option>
+                  <option>Familiale</option>
+                  <option>Suite</option>
+                </select>
+              </label>
+            </div>
+            <div class="booking-choice" data-booking-choice="meeting" hidden>
+              <label for="meeting-room">Salle de séminaire
+                <select id="meeting-room" name="meeting-room" disabled>
+                  <option>Salle de réunion 1</option>
+                  <option>Salle de réunion 2</option>
+                </select>
+              </label>
+            </div>
+            <div class="field-row">
+              <label for="guest-count" id="guest-count-label">
+                <span id="guest-count-text">Nombre de voyageurs</span>
+                <input type="number" id="guest-count" name="guest-count" min="1" max="6" value="2" required />
+              </label>
+              <label for="room-count" id="room-count-label">Nombre de chambres
+                <input type="number" id="room-count" name="room-count" min="1" max="5" value="1" required />
+              </label>
+            </div>
+            <div class="field-row">
+              <label for="guest-name">Nom
+                <input type="text" id="guest-name" name="guest-name" autocomplete="name" required />
+              </label>
+              <label for="guest-email">Adresse e-mail
+                <input type="email" id="guest-email" name="guest-email" autocomplete="email" required />
+              </label>
+            </div>
+            <label for="booking-note">Précisions (facultatif)
+              <textarea id="booking-note" name="booking-note" placeholder="Besoins particuliers ou informations utiles"></textarea>
+            </label>
+            <button type="submit" class="button">Valider ma demande (simulation)</button>
+            <p class="payment-note">Aucun paiement n'est réalisé sur cette page de démonstration. La disponibilité et le tarif seront confirmés par l'hôtel avant toute réservation définitive.</p>
+            <p class="booking-status" id="booking-status" role="status" aria-live="polite" tabindex="-1"></p>
+          </form>
+
+          <aside class="booking-aside">
+            <div class="list-block">
+              <h2>Une demande simple et sans engagement</h2>
+              <ul>
+                <li>Choisissez vos dates de séjour ou de réunion.</li>
+                <li>Précisez la catégorie de chambre ou la salle souhaitée.</li>
+                <li>L'équipe vous recontacte pour confirmer la disponibilité.</li>
+              </ul>
+            </div>
+            <p>Pour une réservation de groupe, un bloc de chambres ou une demande particulière, contactez directement notre équipe.</p>
+            <a class="button secondary" href="contact.html">Contacter l'hôtel</a>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="footer-brand">
+            <span class="brand-mark" aria-hidden="true">T</span>
+            <div>
+              <strong>Hôtel de Toulouse</strong>
+              <div>Besançon</div>
+            </div>
+          </div>
+          <p>Hôtel de charme 3 étoiles au centre de Besançon, entre confort, accueil et esprit de quartier.</p>
+        </div>
+        <div>
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="chambres.html">Chambres</a></li>
+            <li><a href="seminaire.html">Séminaires</a></li>
+            <li><a href="reception-mariage.html">Réception &amp; Mariage</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Découvrir</h3>
+          <ul>
+            <li><a href="tourisme.html">Tourisme</a></li>
+            <li><a href="acces.html">Accès &amp; Situation</a></li>
+            <li><a href="galerie-photos.html">Galerie Photos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="reservation.html">Réservation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li>Centre-ville de Besançon</li>
+            <li>Tel. : +33 (0)3 81 23 45 67</li>
+            <li>hello@hotel-detoulouse.fr</li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>© <span id="year"></span> Hôtel de Toulouse</span>
+        <span>Tous droits réservés</span>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
